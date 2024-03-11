@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { faCircleCheck,faBell } from "@fortawesome/free-regular-svg-icons";
-import { faVideo,faNewspaper} from "@fortawesome/free-solid-svg-icons";
+import { faVideo,faNewspaper,faCoffee} from "@fortawesome/free-solid-svg-icons";
 export default function Home() {
   const  link = [
     {
@@ -13,7 +13,7 @@ export default function Home() {
     },
     {
       name: "Notification FrontEnd",
-      url: "/",
+      url: "/notification",
 
       icon: faBell
 
@@ -24,6 +24,11 @@ export default function Home() {
       icon: faVideo
 
 
+    },
+    {
+      name:"Coffe Site",
+      url:"/coffe",
+      icon:faCoffee
     },
     {
       name: "Proximamente",

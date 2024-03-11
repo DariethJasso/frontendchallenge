@@ -24,5 +24,69 @@
       "icon": "../summary/images/icon-visual.svg",
       "color": "#FB6F92"
     }
-  ]
+  ],
+  "notification" : [
+    {
+        "id": 1,
+        "avatar": "../notification/images/avatar-mark-webber.webp",
+        "name": "Mark Webber",
+        "message": "reacted to your recent post",
+        "post": "My first tournament today!",
+        "time": "1m ago",
+        "notified":true
+    },
+    {
+        "id": 2,
+        "avatar": "../notification/images/avatar-angela-gray.webp",
+        "name": "Angela Gray",
+        "message": "followed you",
+        "time": "5m ago",
+        "notified":true
+    },
+    {
+        "id": 3,
+        "avatar": "../notification/images/avatar-jacob-thompson.webp",
+        "name": "Jacob Thompson",
+        "message": "has joined your group",
+        "group": "Chess Club",
+        "time": "1day ago",
+        "notified":true
+    },
+    {
+        "id": 4,
+        "avatar": "../notification/images/avatar-rizky-hasanuddin.webp",
+        "name": "Rizky Hasanuddin",
+        "message": "sent you a private message",
+        "post": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+        "time": "5days ago",
+        "notified":false
+    },
+    {
+        "id": 5,
+        "avatar": "../notification/images/avatar-kimberly-smith.webp",
+        "name": "Kimberly Smith",
+        "message": "commented on your picture",
+        "image": "../notification/images/image-chess.webp",
+        "time": "1week ago",
+        "notified":false
+    },
+    {
+        "id": 6,
+        "avatar": "../notification/images/avatar-nathan-peterson.webp",
+        "name": "Nathan Peterson",
+        "message": "reacted to your recent post",
+        "post": "5 end-game strategies to increase your win rate",
+        "time": "2weeks ago",
+        "notified":true
+    },
+    {
+        "id": 7,
+        "avatar": "../notification/images/avatar-anna-kim.webp",
+        "name": "Anna Kim",
+        "message": "left the group",
+        "group": "Chess Club",
+        "time": "2weeks ago",
+        "notified":false
+    }
+]
 }

@@ -88,5 +88,62 @@
         "time": "2weeks ago",
         "notified":false
     }
-]
+],
+  "coffe":[
+    {
+        "id": 1,
+        "image": "https://www.somoselcafe.com.ar/img/novedades/31.jpg",
+        "name": "Cappuccino",
+        "popular":true,
+        "price":5.20,
+        "rating":4.5,
+        "votes":65
+    },
+    {
+        "id": 2,
+        "image": "https://cafe1820.com/wp-content/uploads/2022/03/Cafe-negro.jpg",
+        "name": "House Coffe",
+        "popular":false,
+        "price":3.50,
+        "rating":4.85,
+        "votes":14
+    },
+    {
+        "id": 3,
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Espresso_BW_1.jpg/1200px-Espresso_BW_1.jpg",
+        "name": "Espresso",
+        "popular":false,
+        "price":2.50,
+        "rating":4.9,
+        "votes":55
+    },
+    {
+        "id": 4,
+        "image": "https://www.shutterstock.com/image-photo/close-shot-hot-latte-coffee-600nw-2248642713.jpg",
+        "name": "Coffe Latte",
+        "popular":false,
+        "price":4.50,
+        "rating":5.0,
+        "votes":23
+    },
+    {
+        "id": 5,
+        "image": "https://cdn.aarp.net/content/dam/aarp/health/healthy-living/2019/12/1140-coffee-cacao-benefits-esp.jpg",
+        "name": "Chocolate Coffe",
+        "popular":false,
+        "price":4.00,
+        "rating":4.65,
+        "votes":122
+    },{
+        "id": 6,
+        "image": "https://theexoticbean.com/wp-content/uploads/2019/02/valentines-day-coffee-recipes.jpg",
+        "name": "Valentine Special",
+        "popular":false,
+        "price":5.50,
+        "rating":0,
+        "votes":0
+    }
+
+  ]
+    
 }

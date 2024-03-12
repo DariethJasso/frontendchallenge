@@ -17,20 +17,35 @@ export type Notification = {
     group?: string;
     time: string;
 }
+
+export type Coffe = {
+    id: number;
+    image: string;
+    name: string;
+    popular: boolean;
+    price: number;
+    rating: number;
+    votes: number;
+    available?: boolean;
+}
 export type DataGlobal = {
     summary: Category[];
-    notification: Notification[]
+    notification: Notification[];
+    coffe: Coffe[];
+
 }
 
 const DataContext = React.createContext<DataGlobal>({
     summary : [],
-    notification : []
+    notification : [],
+    coffe : []
 });
 
 
 const DataProvider = ({ children }:{children: React.ReactNode}) => {
     const [summary, setSummary] = React.useState<Category[]>([]);
     const [notification, setNotification] = React.useState<Notification[]>([]);
+    const [coffe, setCoffe] = React.useState<Coffe[]>([]);
 
 
     const fectchSummary = async () => {
@@ -56,14 +71,27 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
         }
     }
 
+    const fetchCoffe = async () => {
+        try {
+            const response = await axios.get('https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json');
+            console.log(response.data);
+            const coffes = await response.data;
+            setCoffe(coffes);
+
+        } catch (error) {
+            console.error('Error fetching coffe:', error);
+        }
+    }
+
 
 
     useEffect(() => {
         fectchSummary();
         fetchNotifitication();
+        fetchCoffe();
     },[]);
     return (
-        <DataContext.Provider value={{ summary, notification }}>
+        <DataContext.Provider value={{ summary, notification, coffe }}>
             {children}
         </DataContext.Provider>
     )

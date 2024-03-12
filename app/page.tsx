@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { faCircleCheck,faBell } from "@fortawesome/free-regular-svg-icons";
 import { faVideo,faNewspaper,faCoffee} from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 export default function Home() {
   const  link = [
     {
@@ -29,6 +30,11 @@ export default function Home() {
       name:"Coffe Site",
       url:"/coffe",
       icon:faCoffee
+    },
+    {
+      name:"Twitter - X",
+      url:"/twitter",
+      icon:faTwitter
     },
     {
       name: "Proximamente",

@@ -28,17 +28,36 @@ export type Coffe = {
     votes: number;
     available?: boolean;
 }
+export type Tweet = {
+    id: number;
+    avatar: string;
+    name: string;
+    username: string;
+    timestamp: string;
+    text: string;
+    image?: string;
+    comments?: number;
+    likes?: number;
+    retweets?: number;
+    statistics?: string;
+    verified?: boolean;
+
+}
 export type DataGlobal = {
     summary: Category[];
     notification: Notification[];
     coffe: Coffe[];
+    tweets: Tweet[];
+
 
 }
+
 
 const DataContext = React.createContext<DataGlobal>({
     summary : [],
     notification : [],
-    coffe : []
+    coffe : [],
+    tweets : [],
 });
 
 
@@ -46,7 +65,7 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
     const [summary, setSummary] = React.useState<Category[]>([]);
     const [notification, setNotification] = React.useState<Notification[]>([]);
     const [coffe, setCoffe] = React.useState<Coffe[]>([]);
-
+    const [tweets, setTweets] = React.useState<Tweet[]>([]);
 
     const fectchSummary = async () => {
         try {
@@ -83,15 +102,27 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
         }
     }
 
+    const fetchTweets = async () => {
+        try {
+            const response = await axios.get('http://localhost:3030/tweets');
+            console.log(response.data);
+            const tweets = await response.data;
+            setTweets(tweets);
+        } catch (error) {
+            
+        }
+    }
+
 
 
     useEffect(() => {
         fectchSummary();
         fetchNotifitication();
         fetchCoffe();
+        fetchTweets();
     },[]);
     return (
-        <DataContext.Provider value={{ summary, notification, coffe }}>
+        <DataContext.Provider value={{ summary, notification, coffe, tweets }}>
             {children}
         </DataContext.Provider>
     )

@@ -10,7 +10,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+      screens: {
+        'xl1': {'raw': '(min-width: 1281px)'},
+        // Define tus propios nombres y condiciones de media query personalizadas
+      }
     },
   },
   plugins: [nextui()],

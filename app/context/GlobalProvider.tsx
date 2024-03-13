@@ -43,11 +43,36 @@ export type Tweet = {
     verified?: boolean;
 
 }
+
+export type Trend = {
+    country: string;
+    tendencia: string;
+    posts: number;
+}
+
+export type TweetCategory = {
+    id: number;
+    avatar: string;
+    name: string;
+    username: string;
+    timestamp: string;
+    text: string;
+    image?: string;
+    comments?: number;
+    likes?: number;
+    retweets?: number;
+    statistics?: string;
+    verified?: boolean;
+    categoria: string;
+
+}
 export type DataGlobal = {
     summary: Category[];
     notification: Notification[];
     coffe: Coffe[];
     tweets: Tweet[];
+    trends: Trend[];
+    tweetsCategory: TweetCategory[];
 
 
 }
@@ -58,6 +83,8 @@ const DataContext = React.createContext<DataGlobal>({
     notification : [],
     coffe : [],
     tweets : [],
+    trends : [],
+    tweetsCategory : [],
 });
 
 
@@ -66,6 +93,8 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
     const [notification, setNotification] = React.useState<Notification[]>([]);
     const [coffe, setCoffe] = React.useState<Coffe[]>([]);
     const [tweets, setTweets] = React.useState<Tweet[]>([]);
+    const [trends, setTrends] = React.useState<Trend[]>([]);
+    const [tweetsCategory, setTweetsCategory] = React.useState<TweetCategory[]>([]);
 
     const fectchSummary = async () => {
         try {
@@ -104,15 +133,37 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
 
     const fetchTweets = async () => {
         try {
+            // await new Promise((resolve) => setTimeout(resolve, 3000));
             const response = await axios.get('http://localhost:3030/tweets');
             console.log(response.data);
             const tweets = await response.data;
             setTweets(tweets);
         } catch (error) {
-            
+            console.error('Error fetching tweets:', error);
+        }
+    }
+    
+    const fetchTrends = async () => {
+        try {
+            const response = await axios.get('http://localhost:3030/tendencias');
+            console.log(response.data);
+            const trends = await response.data;
+            setTrends(trends);
+        } catch (error) {
+            console.error('Error fetching trends:', error);
         }
     }
 
+    const fetchTweetsCategory = async () => {
+        try {
+            const response = await axios.get('http://localhost:3030/postcategory');
+            console.log(response.data);
+            const tweetsCategory = await response.data;
+            setTweetsCategory(tweetsCategory);
+        } catch (error) {
+            console.error('Error fetching tweetsCategory:', error);
+        }
+    }
 
 
     useEffect(() => {
@@ -120,9 +171,12 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
         fetchNotifitication();
         fetchCoffe();
         fetchTweets();
+        fetchTrends();
+        fetchTweetsCategory();
+        
     },[]);
     return (
-        <DataContext.Provider value={{ summary, notification, coffe, tweets }}>
+        <DataContext.Provider value={{ summary, notification, coffe, tweets, trends, tweetsCategory }}>
             {children}
         </DataContext.Provider>
     )

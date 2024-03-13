@@ -148,6 +148,19 @@
   
     "tweets": [
       {
+        "avatar": "https://imgs.search.brave.com/R_i-AB684ktpwT6X8OS95OyFDzTaJqkf9JYEV006SHI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9sYWJp/b2RlLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMi8wOS9F/bC1NYXJpYW5hLXN0/cmVhbWVyLmpwZw",
+        "name":"El Mariana",
+        "username": "@mariana",
+        "timestamp": "15 mar.",
+        "text": "Fuera de broma si sería buen modelo we JAJAJAJA",
+        "image": "https://pbs.twimg.com/media/GIcpLJzbIAApgg_?format=jpg&name=medium",
+        "comments": 245,
+        "retweets": 174,
+        "likes": 434,
+        "statistics": "546 mil",
+        "verified":true
+      },
+      {
         "avatar": "https://scontent.ftpq2-1.fna.fbcdn.net/v/t39.30808-6/414692329_1684501038710323_301892290143777707_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEMOP-6eD5Kcvh7ZTiVRKs2SKMlXnQWyc1IoyVedBbJzVR8s5aeYB25hdXpAAiLLxcjSRS8uzrxXIywbiX3RlrN&_nc_ohc=Cq-4kj-VCCoAX9DfYvi&_nc_ht=scontent.ftpq2-1.fna&oh=00_AfDM7SSCcaipT2lYAT44bVEH4k1n-lz1bxs197GvKwRXdQ&oe=65F4CEAB",
         "name":"Darieth Jasso",
         "username": "@jasso2",
@@ -289,6 +302,134 @@
         "likes": 40,
         "statistics": "2 mil",
         "verified":false
+      }
+    ],
+    "tendencias": [
+      {
+        "country": "México",
+        "tendencia": "#Elecciones2024",
+        "posts": 1500
+      },
+      {
+        "country": "España",
+        "tendencia": "#Covid19",
+        "posts": 2800
+      },
+      {
+        "country": "Argentina",
+        "tendencia": "#Clima",
+        "posts": 900
+      },
+      {
+        "country": "Brasil",
+        "tendencia": "#Futebol",
+        "posts": 3500
+      },
+      {
+        "country": "Estados Unidos",
+        "tendencia": "#Politics",
+        "posts": 5000
+      },
+      {
+        "country": "Reino Unido",
+        "tendencia": "#Brexit",
+        "posts": 1200
+      },
+      {
+        "country": "Francia",
+        "tendencia": "#Mode",
+        "posts": 2000
+      },
+      {
+        "country": "Alemania",
+        "tendencia": "#Fußball",
+        "posts": 3000
+      }
+    ],
+    "postcategory": [
+      {
+        "avatar": "https://i.pravatar.cc/150?u=1",
+        "name": "Pedro Perez",
+        "username": "@pedro233",
+        "timestamp": "5h",
+        "text": "¡Feliz cumpleaños a mi querido amigo! 🎂🎈",
+        "image": null,
+        "comments": 10,
+        "retweets": 18,
+        "likes": 40,
+        "statistics": "2 mil",
+        "verified": false,
+        "categoria": "comida"
+      },
+      {
+        "avatar": "https://i.pravatar.cc/150?u=2",
+        "name": "María García",
+        "username": "@mariag",
+        "timestamp": "10h",
+        "text": "¡Hoy probé una nueva receta y quedó espectacular! 😋🍲",
+        "image": "https://imgs.search.brave.com/5q4a5pW0QJolvx9cdEJQk86NyUo73-qoUrUgISpGRF0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9ndWFk/YWxhamFyYS5jYy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/NS81LUNvbWlkYXMt/dGlwaWNhcy1kZS1H/dWFkYWxhamFyYS1K/YWxpc2NvLTEwMjR4/MTAwOS5qcGc",
+        "comments": 15,
+        "retweets": 25,
+        "likes": 60,
+        "statistics": "3.5 mil",
+        "verified": true,
+        "categoria": "comida"
+      },
+      {
+        "avatar": "https://i.pravatar.cc/150?u=3",
+        "name": "David Smith",
+        "username": "@david_smith",
+        "timestamp": "3h",
+        "text": "Just finished playing the latest game release. It's mind-blowing! 🎮🔥",
+        "image": null,
+        "comments": 8,
+        "retweets": 12,
+        "likes": 30,
+        "statistics": "1.2 mil",
+        "verified": false,
+        "categoria": "gaming"
+      },
+      {
+        "avatar": "https://i.pravatar.cc/150?u=4",
+        "name": "Emily Johnson",
+        "username": "@emily_j",
+        "timestamp": "1d",
+        "text": "Looking forward to the weekend gaming session with friends! 🕹️",
+        "image": "https://imgs.search.brave.com/EA9xkN8xTnXRRDNGGhikgwO7dVtYdoqv6oE1mAz0T5s/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzIzL2Uz/LzQwLzIzZTM0MGY0/YjcyNzgwNGMxMjM3/MWIwZGM1ZWU5NzYw/LmpwZw",
+        "comments": 20,
+        "retweets": 35,
+        "likes": 70,
+        "statistics": "4.2 mil",
+        "verified": true,
+        "categoria": "gaming"
+      },
+      {
+        "avatar": "https://i.pravatar.cc/150?u=5",
+        "name": "Michael Williams",
+        "username": "@mike_w",
+        "timestamp": "1h",
+        "text": "Excited to try out the new smartphone that just launched! 📱💥",
+        "image": null,
+        "comments": 12,
+        "retweets": 20,
+        "likes": 45,
+        "statistics": "2.8 mil",
+        "verified": false,
+        "categoria": "tecnología"
+      },
+      {
+        "avatar": "https://i.pravatar.cc/150?u=6",
+        "name": "Sophia Brown",
+        "username": "@sophiab",
+        "timestamp": "6h",
+        "text": "Technology is evolving so fast! Can't wait to see what's next. 💻🚀",
+        "image": "https://imgs.search.brave.com/zsecFOFS97o-cDkfozcWtqrckp4mQ2u7PCASTPrk1aQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zMS5z/aWduaWZpY2Fkb3Mu/Y29tL2ZvdG8vdGVj/bm9sb2dpYS1lbi1s/YS1lZHVjYWNpb24u/anBnP2NsYXNzPWFy/dGljbGU",
+        "comments": 18,
+        "retweets": 30,
+        "likes": 55,
+        "statistics": "3.9 mil",
+        "verified": true,
+        "categoria": "tecnología"
       }
     ]
   

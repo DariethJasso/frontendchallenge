@@ -7,8 +7,8 @@ import { Tweet } from "@/app/context/GlobalProvider";
 export default function Post({tweet}:{tweet:Tweet}) {
     const {avatar, name, username, timestamp, text, image, comments, retweets, likes,statistics,verified} = tweet
     return (
-        <div className="border-1 border-gray-500">
-            <div className="flex gap-2 p-2">
+        <div className="border-1 border-gray-500/30">
+            <div className="flex gap-2 p-1">
                 <img src={avatar} alt={name} className="rounded-full w-10 h-10" />
                 <div className="flex flex-col w-full">
                     <div className="flex justify-between ">
@@ -25,7 +25,7 @@ export default function Post({tweet}:{tweet:Tweet}) {
                     <div className="flex flex-col gap-1">
                         <p className="text-white">{text}</p>
                         {
-                            image ? <img src={image} alt="" className="rounded-lg max-h-[400px] max-w-[300px]" /> : ''
+                            image ? <img src={image} alt="" className="rounded-lg max-h-[450px] max-w-[330px] md:max-w-[500px] sm:max-h-[700px]" /> : ''
                         }
                     </div>
                     <div className="flex items-center pt-2 justify-between">

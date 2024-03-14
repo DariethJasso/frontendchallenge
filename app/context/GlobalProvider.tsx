@@ -28,11 +28,25 @@ export type Coffe = {
     votes: number;
     available?: boolean;
 }
-export type Tweet = {
+export type Users={
     id: number;
-    avatar: string;
     name: string;
     username: string;
+    email: string;
+    avatar: string;
+    bio?: string;
+    verified: boolean;
+    followers: string;
+    following: string;
+    tweets: string;
+    location: string;
+    joined: string;
+    
+}
+export type Tweet = {
+    userId: number;
+    id: number;
+
     timestamp: string;
     text: string;
     image?: string;
@@ -40,7 +54,8 @@ export type Tweet = {
     likes?: number;
     retweets?: number;
     statistics?: string;
-    verified?: boolean;
+    categoria?: string;
+   
 
 }
 
@@ -50,29 +65,20 @@ export type Trend = {
     posts: number;
 }
 
-export type TweetCategory = {
-    id: number;
-    avatar: string;
-    name: string;
-    username: string;
-    timestamp: string;
-    text: string;
-    image?: string;
-    comments?: number;
-    likes?: number;
-    retweets?: number;
-    statistics?: string;
-    verified?: boolean;
-    categoria: string;
 
-}
+
+
+
+
 export type DataGlobal = {
     summary: Category[];
     notification: Notification[];
     coffe: Coffe[];
+    users: Users[];
     tweets: Tweet[];
     trends: Trend[];
-    tweetsCategory: TweetCategory[];
+    
+    loading: boolean
 
 
 }
@@ -82,9 +88,11 @@ const DataContext = React.createContext<DataGlobal>({
     summary : [],
     notification : [],
     coffe : [],
+    users : [],
     tweets : [],
     trends : [],
-    tweetsCategory : [],
+    
+    loading : true
 });
 
 
@@ -92,9 +100,10 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
     const [summary, setSummary] = React.useState<Category[]>([]);
     const [notification, setNotification] = React.useState<Notification[]>([]);
     const [coffe, setCoffe] = React.useState<Coffe[]>([]);
+    const [loading,setLoading] = React.useState<boolean>(true);
+    const [users, setUsers] = React.useState<Users[]>([]);
     const [tweets, setTweets] = React.useState<Tweet[]>([]);
     const [trends, setTrends] = React.useState<Trend[]>([]);
-    const [tweetsCategory, setTweetsCategory] = React.useState<TweetCategory[]>([]);
 
     const fectchSummary = async () => {
         try {
@@ -131,9 +140,22 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
         }
     }
 
+    const fetchUsers = async () => {
+        try {
+            const response = await axios.get('http://localhost:3030/usuarios');
+            console.log(response.data);
+            const users = await response.data;
+            setUsers(users);
+        } catch (error) {
+            console.error('Error fetching users:', error);
+        }
+    }
+
     const fetchTweets = async () => {
         try {
-            // await new Promise((resolve) => setTimeout(resolve, 3000));
+            setLoading(true);
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            setLoading(false);
             const response = await axios.get('http://localhost:3030/tweets');
             console.log(response.data);
             const tweets = await response.data;
@@ -154,29 +176,20 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
         }
     }
 
-    const fetchTweetsCategory = async () => {
-        try {
-            const response = await axios.get('http://localhost:3030/postcategory');
-            console.log(response.data);
-            const tweetsCategory = await response.data;
-            setTweetsCategory(tweetsCategory);
-        } catch (error) {
-            console.error('Error fetching tweetsCategory:', error);
-        }
-    }
+    
 
 
     useEffect(() => {
         fectchSummary();
         fetchNotifitication();
         fetchCoffe();
+        fetchUsers();
         fetchTweets();
         fetchTrends();
-        fetchTweetsCategory();
         
     },[]);
     return (
-        <DataContext.Provider value={{ summary, notification, coffe, tweets, trends, tweetsCategory }}>
+        <DataContext.Provider value={{ summary, notification, coffe, tweets, trends, loading,users }}>
             {children}
         </DataContext.Provider>
     )

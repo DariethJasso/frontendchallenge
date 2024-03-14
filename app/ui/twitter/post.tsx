@@ -2,10 +2,12 @@
 import { faCertificate, faEllipsis, faRetweet,faChartSimple,faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment, faHeart,faBookmark } from "@fortawesome/free-regular-svg-icons";
-import { Tweet } from "@/app/context/GlobalProvider";
+import { Tweet, Users } from "@/app/context/GlobalProvider";
+import Link from "next/link";
 
-export default function Post({tweet}:{tweet:Tweet}) {
-    const {avatar, name, username, timestamp, text, image, comments, retweets, likes,statistics,verified} = tweet
+export default function Post({tweet,user}:{tweet:Tweet,user:Users}) {
+    const {userId, timestamp, text, image, comments, retweets, likes,statistics, categoria} = tweet;
+    const { id,name, username, email, avatar, verified, followers, following, tweets, location, joined, bio } = user;
     return (
         <div className="border-1 border-gray-500/30">
             <div className="flex gap-2 p-1">
@@ -13,7 +15,7 @@ export default function Post({tweet}:{tweet:Tweet}) {
                 <div className="flex flex-col w-full">
                     <div className="flex justify-between ">
                         <div className="flex gap-1 items-center">
-                            <p className=" text-[14px] text-white font-bold w-auto">{name}</p>
+                            <Link href={`/twitter/${id}/profile`} className=" text-[14px] text-white font-bold w-auto hover:underline">{name}</Link>
                             {
                                 verified ? <FontAwesomeIcon className="text-blue-500 w-4" icon={faCertificate} /> : ''
                             }
@@ -23,9 +25,9 @@ export default function Post({tweet}:{tweet:Tweet}) {
                        <FontAwesomeIcon className=" text-gray-400 hover:text-blue-500" icon={faEllipsis} />
                     </div>
                     <div className="flex flex-col gap-1">
-                        <p className="text-white">{text}</p>
+                        <p className="text-white md:max-w-[500px] text-justify">{text}</p>
                         {
-                            image ? <img src={image} alt="" className="rounded-lg max-h-[450px] max-w-[330px] md:max-w-[500px] sm:max-h-[700px]" /> : ''
+                            image ? <img src={image} alt="" className="rounded-lg max-h-[450px] max-w-[300px]  sm:max-w-[330px] md:max-w-[450px] sm:max-h-[700px]" /> : ''
                         }
                     </div>
                     <div className="flex items-center pt-2 justify-between">

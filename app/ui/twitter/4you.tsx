@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 export default function FourYou() {
     const pathname = usePathname();
     return (
-        <div className="border-b-1 border-gray-300/25 flex justify-center sm:fixed sm:w-[74%] sm:bg-opacity-50 sm:backdrop-blur-lg lg:w-[45%] xl:w-[40.5%]">
+        <div className="border-b-1 border-gray-300/25 flex justify-center sm:fixed sm:w-[74%] sm:bg-opacity-50 sm:backdrop-blur-lg lg:w-[50%] xl1:w-[40.5%]">
             <Link className="w-[50%] h-[50px] text-center flex flex-col items-center gap-2 pt-3 hover:bg-gray-300/10" href="/twitter">
                 <p className={`text-gray-400  ${pathname === '/twitter' ? 'text-white font-bold' : ''}`}>Para ti</p>
                 <hr className={`w-[60px] h-1 bg-blue-500 rounded-md border-none ${pathname === '/twitter' ? 'flex' : 'hidden'}`}/>
@@ -15,9 +15,6 @@ export default function FourYou() {
                 <p className={`text-gray-400 ${pathname === '/twitter/siguiendo' ? 'text-white font-bold' : ''}`}>Siguiendo</p>
                 <hr className={`w-[60px] h-1 bg-blue-500 rounded-md border-none ${pathname === '/twitter/siguiendo' ? 'flex' : 'hidden'}`}  />
             </Link>
-            <div className="sm:w-[20%]">
-                
-            </div>
         </div>
     )
 }

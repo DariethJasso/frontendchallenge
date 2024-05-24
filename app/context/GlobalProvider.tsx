@@ -33,6 +33,7 @@ export type Users={
     name: string;
     username: string;
     email: string;
+    back?:string;
     avatar: string;
     bio?: string;
     verified: boolean;
@@ -142,6 +143,9 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
 
     const fetchUsers = async () => {
         try {
+            setLoading(true);
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            setLoading(false);
             const response = await axios.get('http://localhost:3030/usuarios');
             console.log(response.data);
             const users = await response.data;
@@ -189,7 +193,7 @@ const DataProvider = ({ children }:{children: React.ReactNode}) => {
         
     },[]);
     return (
-        <DataContext.Provider value={{ summary, notification, coffe, tweets, trends, loading,users }}>
+        <DataContext.Provider value={{ summary, notification, coffe,users, tweets, trends, loading, }}>
             {children}
         </DataContext.Provider>
     )

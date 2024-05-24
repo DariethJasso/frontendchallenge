@@ -6,8 +6,8 @@ import { Tweet, Users } from "@/app/context/GlobalProvider";
 import Link from "next/link";
 
 export default function Post({tweet,user}:{tweet:Tweet,user:Users}) {
-    const {userId, timestamp, text, image, comments, retweets, likes,statistics, categoria} = tweet;
-    const { id,name, username, email, avatar, verified, followers, following, tweets, location, joined, bio } = user;
+    const {timestamp, text, image, comments, retweets, likes,statistics} = tweet;
+    const { id,name, username, avatar, verified } = user;
     return (
         <div className="border-1 border-gray-500/30">
             <div className="flex gap-2 p-1">

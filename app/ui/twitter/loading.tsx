@@ -3,7 +3,9 @@ import {Spinner} from "@nextui-org/react";
 
 export default function Loading() {
   return (
-      <Spinner size="md" color="primary" />
+      <div className="flex justify-center h-screen">
+        <Spinner size="md" color="primary" />
+      </div>
     
   );
 }

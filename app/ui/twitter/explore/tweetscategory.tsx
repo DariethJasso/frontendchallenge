@@ -19,7 +19,7 @@ export default function TweetsCategory() {
             </div>
             {
                 tweets.filter((item) => item.categoria === 'comida').map((item) => (
-                    <Post key={item.id} tweet={item} user={users.find(user => user.id === item.userId) || { id: 0, name: "", username: "", email: "", avatar: "", verified: false, followers: "", following: "", tweets: "", location: "", joined: "" }} />
+                    <Post key={item.id} tweet={item} user={users.find(user => user.id == item.userId) || { id: 0, name: "", username: "", email: "", avatar: "", verified: false, followers: "", following: "", tweets: "", location: "", joined: "" }} />
 
 
 
@@ -34,7 +34,7 @@ export default function TweetsCategory() {
             </div>
             {
                 tweets.filter((item) => item.categoria === 'gaming').map((item) => (
-                    <Post key={item.id} tweet={item} user={users.find(user => user.id === item.userId) || { id: 0, name: "", username: "", email: "", avatar: "", verified: false, followers: "", following: "", tweets: "", location: "", joined: "" }} />
+                    <Post key={item.id} tweet={item} user={users.find(user => user.id == item.userId) || { id: 0, name: "", username: "", email: "", avatar: "", verified: false, followers: "", following: "", tweets: "", location: "", joined: "" }} />
 
                 ))
             }
@@ -47,7 +47,7 @@ export default function TweetsCategory() {
             </div>
             {
                 tweets.filter((item) => item.categoria === 'tecnología').map((item) => (
-                    <Post key={item.id} tweet={item} user={users.find(user => user.id === item.userId) || { id: 0, name: "", username: "", email: "", avatar: "", verified: false, followers: "", following: "", tweets: "", location: "", joined: "" }} />
+                    <Post key={item.id} tweet={item} user={users.find(user => user.id == item.userId) || { id: 0, name: "", username: "", email: "", avatar: "", verified: false, followers: "", following: "", tweets: "", location: "", joined: "" }} />
 
                 ))
             }

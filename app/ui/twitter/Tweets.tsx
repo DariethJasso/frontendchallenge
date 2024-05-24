@@ -5,23 +5,26 @@ import Post from "./post";
 import Loading from "./loading";
 
 export default function Tweets() {
-    const { tweets, loading, users } = useData();
+    const {tweets,users,loading} = useData();
     const [visibleTweets, setVisibleTweets] = useState(6);
+    // console.log(loading);
+    console.log(users);
     
     const showMoreTweets = () => {
         setVisibleTweets(prevVisibleTweets => prevVisibleTweets + 6);
     };
-
+    
     return (
         <>
             {loading ? (
                 <Loading />
-            ) : (
-                tweets.slice(0, visibleTweets).map((item) => {
+                ) : (
+                    tweets.slice(0, visibleTweets).map((tweet) => {
+
                     // Buscar el usuario correspondiente al tweet
                     return (
 
-                        <Post key={item.id} tweet={item} user={users.find(user => user.id === item.userId) || { id: 0, name: "", username: "", email: "", avatar: "", verified: false, followers: "", following: "", tweets: "", location: "", joined: "" }} />
+                        <Post key={tweet.id} tweet={tweet} user={users.find(user => user.id == tweet.userId) || { id: 0, name: "", username: "", email: "", avatar: "", verified: false, followers: "", following: "", tweets: "", location: "", joined: "" }} />
                     )
 
 

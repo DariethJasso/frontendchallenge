@@ -7,8 +7,8 @@ import { Users } from "@/app/context/GlobalProvider";
 export default function Biography({user}:{user:Users}) {
     return (
         <div className="text-white bg-black flex flex-col" >
-            <img src="https://pbs.twimg.com/profile_banners/1303576011716595712/1629828165/1500x500" alt="" />
-            <img className="rounded-full border border-black absolute w-[80px] h-[80px] top-[145px] left-[20px] sm:left-[150px] sm:top-[170px] md:w-[120px] md:h-[120px] lg:w-[120px] lg:h-[120px] lg:left-[320px] lg:top-[160px]" src={user.avatar} alt="" />
+            <img src={`${user.back ? user.back : "https://imgs.search.brave.com/-aRam-AmDbQa9FlruyF42muqOwXU8inDWb6IEy9gHoQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMS8w/Ni8yOS8wOC8wNy90/d2l0dGVyLWNvdmVy/LTYzNzM0OTNfMTI4/MC5qcGc"}`} alt="" />
+            <img className="rounded-full border border-black absolute w-[80px] h-[80px] top-[190px] left-[20px] sm:left-[150px] sm:top-[220px] md:w-[120px] md:h-[120px] lg:w-[120px] lg:h-[120px] lg:left-[320px] lg:top-[160px]" src={user.avatar} alt="" />
             <section className="flex flex-col bg-black h-auto px-4 pt-3 gap-3 border-b-1 border-gray-400">
                 <div className="flex justify-end gap-2">
                     <button className="border border-gray-500  rounded-full w-[35px] h-[35px]"><FontAwesomeIcon icon={faEllipsis} /></button>
